@@ -4,7 +4,8 @@ const client = require('prom-client');
 const app = express();
 app.use(express.json());
 
-// ---------- Métricas (Prometheus) ---------- client.collectDefaultMetrics(); 
+// ---------- Métricas (Prometheus) ---------- 
+client.collectDefaultMetrics(); 
 const duracionHttp = new client.Histogram({
     name: 'http_request_duration_seconds',
     help: 'Duración de las peticiones HTTP en segundos',
